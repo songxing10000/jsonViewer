@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="19529"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="JSONVC" customModule="jsonViewer" customModuleProvider="target">
+            <connections>
+                <outlet property="m_textView" destination="otJ-N0-7IA" id="We6-sR-0ew"/>
+                <outlet property="m_web" destination="19H-E1-LJT" id="rLS-20-Mvd"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nbb-9k-LUL">
+                    <rect key="frame" x="10" y="10" width="460" height="252"/>
+                    <subviews>
+                        <customView id="Onb-37-U47">
+                            <rect key="frame" x="0.0" y="0.0" width="226" height="252"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-6W-CYa">
+                                    <rect key="frame" x="0.0" y="0.0" width="226" height="252"/>
+                                    <clipView key="contentView" drawsBackground="NO" id="LTv-5Z-gQX">
+                                        <rect key="frame" x="0.0" y="0.0" width="211" height="252"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="otJ-N0-7IA">
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="252"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <size key="minSize" width="211" height="252"/>
+                                                <size key="maxSize" width="335" height="10000000"/>
+                                                <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            </textView>
+                                        </subviews>
+                                    </clipView>
+                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bVh-vo-z9I">
+                                        <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="7yS-d0-k6d">
+                                        <rect key="frame" x="211" y="0.0" width="15" height="252"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                </scrollView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Ifh-6W-CYa" secondAttribute="bottom" id="6S9-LC-afg"/>
+                                <constraint firstAttribute="trailing" secondItem="Ifh-6W-CYa" secondAttribute="trailing" id="GXU-xq-4aA"/>
+                                <constraint firstItem="Ifh-6W-CYa" firstAttribute="leading" secondItem="Onb-37-U47" secondAttribute="leading" id="L04-5x-Jrp"/>
+                                <constraint firstItem="Ifh-6W-CYa" firstAttribute="top" secondItem="Onb-37-U47" secondAttribute="top" id="kDt-E6-SpB"/>
+                            </constraints>
+                        </customView>
+                        <customView id="mVD-ae-rxF">
+                            <rect key="frame" x="236" y="0.0" width="224" height="252"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19H-E1-LJT">
+                                    <rect key="frame" x="0.0" y="0.0" width="224" height="252"/>
+                                    <wkWebViewConfiguration key="configuration">
+                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                        <wkPreferences key="preferences"/>
+                                    </wkWebViewConfiguration>
+                                </wkWebView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="19H-E1-LJT" secondAttribute="trailing" id="dCt-no-TML"/>
+                                <constraint firstAttribute="bottom" secondItem="19H-E1-LJT" secondAttribute="bottom" id="eWi-9b-HTZ"/>
+                                <constraint firstItem="19H-E1-LJT" firstAttribute="top" secondItem="mVD-ae-rxF" secondAttribute="top" id="uQl-uF-13G"/>
+                                <constraint firstItem="19H-E1-LJT" firstAttribute="leading" secondItem="mVD-ae-rxF" secondAttribute="leading" id="zZ0-dj-QQ8"/>
+                            </constraints>
+                        </customView>
+                    </subviews>
+                    <holdingPriorities>
+                        <real value="250"/>
+                        <real value="250"/>
+                    </holdingPriorities>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="X7U-2J-gYz"/>
+                    </connections>
+                </splitView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Nbb-9k-LUL" secondAttribute="bottom" constant="10" id="BAu-1G-A6l"/>
+                <constraint firstAttribute="trailing" secondItem="Nbb-9k-LUL" secondAttribute="trailing" constant="10" id="T4O-OR-UJH"/>
+                <constraint firstItem="Nbb-9k-LUL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="ilm-GC-ghn"/>
+                <constraint firstItem="Nbb-9k-LUL" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="tfl-tu-hDV"/>
+            </constraints>
+            <point key="canvasLocation" x="8" y="103"/>
+        </customView>
+    </objects>
+</document>

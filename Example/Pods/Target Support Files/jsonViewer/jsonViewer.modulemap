@@ -1,0 +1,6 @@
+framework module jsonViewer {
+  umbrella header "jsonViewer-umbrella.h"
+
+  export *
+  module * { export * }
+}

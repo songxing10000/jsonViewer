@@ -1,0 +1,16 @@
+PODS:
+  - jsonViewer (0.1.0)
+
+DEPENDENCIES:
+  - jsonViewer (from `../`)
+
+EXTERNAL SOURCES:
+  jsonViewer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  jsonViewer: 58be463ccbc71427c7d5569745ec91a11f38adab
+
+PODFILE CHECKSUM: 8039caeb7edc0480213a1f173e520bf7a0ce9989
+
+COCOAPODS: 1.11.2
