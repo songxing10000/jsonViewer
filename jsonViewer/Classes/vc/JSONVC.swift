@@ -23,19 +23,27 @@ func getImg(_ imgName: String?) -> NSImage? {
     return getLibBundle()?.image(forResource:  imgName )
 }
 public class JSONVC: NSViewController {
-    // MARK: - 初始方法
-    public static func vc(urlStr: String?) -> JSONVC {
-        let vc = JSONVC(nibName: "JSONVC", bundle: getLibBundle())
-        vc.urlStr = urlStr
-         return vc
+    public init() {
+        super.init(nibName: "JSONVC", bundle: getLibBundle())
     }
-    public static func vc(jsonString: String?) -> JSONVC {
-        let vc = JSONVC(nibName: "JSONVC", bundle: getLibBundle())
-        vc.jsonString = jsonString
-         return vc
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    // MARK: - 初始方法
+    public convenience init(urlStr: String?) {
+        self.init()
+        self.urlStr = urlStr
+    }
+    public convenience init(jsonString: String?){
+        
+        self.init()
+        self.jsonString = jsonString
         
     }
     // MARK: - 其他属性
+    
+    @IBOutlet var m_textView2: NSTextView!
     @IBOutlet private weak var m_web: WKWebView!
     @IBOutlet private var m_textView: NSTextView!
     private var isWebViewLoaded = false
@@ -52,22 +60,14 @@ public class JSONVC: NSViewController {
             updateJSONView()
         }
     }
-   
-    
-    // MARK: - 生命周期
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "json预览"
-        m_web.navigationDelegate = self
-        
-        if let json = jsonString {
-            m_textView.string = json
-            updateJSONView()
-        } else if let urlStr = urlStr, let url = URL(string: urlStr)  {
+   /// 解析按钮事件
+    @IBAction func clickPaseBtn(_ sender: NSButton) {
+
+        if let url = URL(string: m_textView2.string)  {
             let  semaphore = DispatchSemaphore (value: 0)
             
             var request = URLRequest(url: url, timeoutInterval: Double.infinity)
-     
+            
             request.httpMethod = "GET"
             
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -87,10 +87,22 @@ public class JSONVC: NSViewController {
             task.resume()
             semaphore.wait()
         }
-       
         
+    }
+    
+    
+    
+    
+    // MARK: - 生命周期
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "json预览"
+        m_web.navigationDelegate = self
         
-        
+        if let json = jsonString {
+            m_textView.string = json
+            updateJSONView()
+        }
      }
     // MARK: - 其他方法
     private func updateJSONView()  {
@@ -141,5 +153,11 @@ extension JSONVC: NSSplitViewDelegate {
     }
     public func splitView(_ splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
         return proposedMaximumPosition - 100
+    }
+}
+extension JSONVC: NSTextDelegate {
+    public func textDidChange(_ notification: Notification) {
+        jsonString = m_textView.string
+            updateJSONView()
     }
 }

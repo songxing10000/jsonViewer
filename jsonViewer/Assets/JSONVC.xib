@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="19529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="19162"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="JSONVC" customModule="jsonViewer" customModuleProvider="target">
             <connections>
                 <outlet property="m_textView" destination="otJ-N0-7IA" id="We6-sR-0ew"/>
+                <outlet property="m_textView2" destination="VNq-Co-qjq" id="7q1-6f-D8m"/>
                 <outlet property="m_web" destination="19H-E1-LJT" id="rLS-20-Mvd"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -17,30 +18,77 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="287"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyt-NB-WKr">
+                    <rect key="frame" x="0.0" y="237" width="480" height="50"/>
+                    <clipView key="contentView" drawsBackground="NO" id="lBU-Ua-TgX">
+                        <rect key="frame" x="0.0" y="0.0" width="465" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="VNq-Co-qjq">
+                                <rect key="frame" x="0.0" y="0.0" width="465" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.14680000000000001" green="0.57081999999999999" blue="0.52502000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="465" height="50"/>
+                                <size key="maxSize" width="465" height="10000000"/>
+                                <attributedString key="textStorage">
+                                    <fragment>
+                                        <string key="content">http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&amp;format=json&amp;appid=379020&amp;bk_key=%E5%85%B3%E9%94%AE%E5%AD%97&amp;bk_length=600</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="0.01592" green="0.12651999999999999" blue="0.15970000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.14680000000000001" green="0.57081999999999999" blue="0.52502000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="34.600000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="34.599998474121094">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="D5Z-fd-0Od">
+                        <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="MCd-hm-aJQ">
+                        <rect key="frame" x="465" y="0.0" width="15" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
                 <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nbb-9k-LUL">
-                    <rect key="frame" x="10" y="10" width="460" height="252"/>
+                    <rect key="frame" x="10" y="10" width="460" height="197"/>
                     <subviews>
-                        <customView id="Onb-37-U47">
-                            <rect key="frame" x="0.0" y="0.0" width="226" height="252"/>
+                        <customView fixedFrame="YES" id="Onb-37-U47">
+                            <rect key="frame" x="0.0" y="0.0" width="226" height="197"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-6W-CYa">
-                                    <rect key="frame" x="0.0" y="0.0" width="226" height="252"/>
+                                <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-6W-CYa">
+                                    <rect key="frame" x="0.0" y="0.0" width="226" height="197"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <clipView key="contentView" drawsBackground="NO" id="LTv-5Z-gQX">
-                                        <rect key="frame" x="0.0" y="0.0" width="211" height="252"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="211" height="197"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="otJ-N0-7IA">
-                                                <rect key="frame" x="0.0" y="0.0" width="211" height="252"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="197"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="minSize" width="211" height="252"/>
+                                                <size key="minSize" width="211" height="197"/>
                                                 <size key="maxSize" width="335" height="10000000"/>
                                                 <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="-2" id="S5U-jd-EYZ"/>
+                                                </connections>
                                             </textView>
                                         </subviews>
                                     </clipView>
@@ -49,38 +97,31 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                     <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="7yS-d0-k6d">
-                                        <rect key="frame" x="211" y="0.0" width="15" height="252"/>
+                                        <rect key="frame" x="211" y="0.0" width="15" height="197"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
                             </subviews>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="Ifh-6W-CYa" secondAttribute="bottom" id="6S9-LC-afg"/>
-                                <constraint firstAttribute="trailing" secondItem="Ifh-6W-CYa" secondAttribute="trailing" id="GXU-xq-4aA"/>
-                                <constraint firstItem="Ifh-6W-CYa" firstAttribute="leading" secondItem="Onb-37-U47" secondAttribute="leading" id="L04-5x-Jrp"/>
-                                <constraint firstItem="Ifh-6W-CYa" firstAttribute="top" secondItem="Onb-37-U47" secondAttribute="top" id="kDt-E6-SpB"/>
-                            </constraints>
                         </customView>
-                        <customView id="mVD-ae-rxF">
-                            <rect key="frame" x="236" y="0.0" width="224" height="252"/>
+                        <customView fixedFrame="YES" id="mVD-ae-rxF">
+                            <rect key="frame" x="236" y="0.0" width="224" height="197"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19H-E1-LJT">
-                                    <rect key="frame" x="0.0" y="0.0" width="224" height="252"/>
+                                <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19H-E1-LJT">
+                                    <rect key="frame" x="0.0" y="0.0" width="224" height="197"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <wkWebViewConfiguration key="configuration">
                                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                         <wkPreferences key="preferences"/>
                                     </wkWebViewConfiguration>
                                 </wkWebView>
                             </subviews>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="19H-E1-LJT" secondAttribute="trailing" id="dCt-no-TML"/>
-                                <constraint firstAttribute="bottom" secondItem="19H-E1-LJT" secondAttribute="bottom" id="eWi-9b-HTZ"/>
-                                <constraint firstItem="19H-E1-LJT" firstAttribute="top" secondItem="mVD-ae-rxF" secondAttribute="top" id="uQl-uF-13G"/>
-                                <constraint firstItem="19H-E1-LJT" firstAttribute="leading" secondItem="mVD-ae-rxF" secondAttribute="leading" id="zZ0-dj-QQ8"/>
-                            </constraints>
                         </customView>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="460" id="I3Q-kl-ZzI"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="197" id="hg3-VB-RmX"/>
+                    </constraints>
                     <holdingPriorities>
                         <real value="250"/>
                         <real value="250"/>
@@ -89,14 +130,29 @@
                         <outlet property="delegate" destination="-2" id="X7U-2J-gYz"/>
                     </connections>
                 </splitView>
+                <button verticalHuggingPriority="750" id="HH5-RE-4uj">
+                    <rect key="frame" x="307" y="205" width="160" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="从url响应中解析json" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3fM-4U-6nh">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickPaseBtn:" target="-2" id="pT3-bM-Lkd"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Nbb-9k-LUL" secondAttribute="bottom" constant="10" id="BAu-1G-A6l"/>
-                <constraint firstAttribute="trailing" secondItem="Nbb-9k-LUL" secondAttribute="trailing" constant="10" id="T4O-OR-UJH"/>
-                <constraint firstItem="Nbb-9k-LUL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="ilm-GC-ghn"/>
-                <constraint firstItem="Nbb-9k-LUL" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="tfl-tu-hDV"/>
+                <constraint firstItem="pyt-NB-WKr" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="9m4-It-9Ox"/>
+                <constraint firstItem="HH5-RE-4uj" firstAttribute="top" secondItem="pyt-NB-WKr" secondAttribute="bottom" constant="5" id="Kfa-rW-tJA"/>
+                <constraint firstItem="Nbb-9k-LUL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="NNt-1O-ZK9"/>
+                <constraint firstItem="Nbb-9k-LUL" firstAttribute="top" secondItem="HH5-RE-4uj" secondAttribute="bottom" constant="5" id="Tqk-Ja-3a8"/>
+                <constraint firstAttribute="trailing" secondItem="Nbb-9k-LUL" secondAttribute="trailing" constant="10" id="Wc3-p3-Kns"/>
+                <constraint firstItem="pyt-NB-WKr" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="bd4-24-ho8"/>
+                <constraint firstAttribute="trailing" secondItem="pyt-NB-WKr" secondAttribute="trailing" id="fiq-RH-A4k"/>
+                <constraint firstAttribute="bottom" secondItem="Nbb-9k-LUL" secondAttribute="bottom" constant="10" id="j6j-yw-VBO"/>
             </constraints>
-            <point key="canvasLocation" x="8" y="103"/>
+            <point key="canvasLocation" x="8" y="102.5"/>
         </customView>
     </objects>
 </document>

@@ -11,12 +11,10 @@ import Foundation
 import jsonViewer
 class ViewController: NSViewController {
     
-    @IBOutlet var m_textView: NSTextView!
+    
     @IBAction func clickBtn(_ sender: NSButtonCell) {
-        let str = m_textView.string
-        if !str.isEmpty {
-            presentAsModalWindow(JSONVC.vc(urlStr: str))
-        }
+            
+        presentAsModalWindow(JSONVC())
     }
 }
 

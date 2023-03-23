@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -711,75 +711,22 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qro-Sd-jTj">
-                                <rect key="frame" x="407" y="13" width="62" height="32"/>
-                                <buttonCell key="cell" type="push" title="解析" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qBH-yQ-ilo">
+                                <rect key="frame" x="408" y="13" width="61" height="32"/>
+                                <buttonCell key="cell" type="push" title="打开" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qBH-yQ-ilo">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
                                     <connections>
                                         <action selector="clickBtn:" target="XfG-lQ-9wD" id="oG3-Pv-wmy"/>
                                     </connections>
                                 </buttonCell>
                             </button>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-Y5-sF7">
-                                <rect key="frame" x="10" y="82" width="462" height="148"/>
-                                <clipView key="contentView" drawsBackground="NO" id="2bD-b8-hKk">
-                                    <rect key="frame" x="0.0" y="0.0" width="447" height="148"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="XE0-Ae-gON">
-                                            <rect key="frame" x="0.0" y="0.0" width="447" height="148"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                            <color key="textColor" red="0.14680000000000001" green="0.57081999999999999" blue="0.52502000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="447" height="148"/>
-                                            <size key="maxSize" width="460" height="10000000"/>
-                                            <attributedString key="textStorage">
-                                                <fragment>
-                                                    <string key="content">http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&amp;format=json&amp;appid=379020&amp;bk_key=%E5%85%B3%E9%94%AE%E5%AD%97&amp;bk_length=600</string>
-                                                    <attributes>
-                                                        <color key="NSBackgroundColor" red="0.01592" green="0.12651999999999999" blue="0.15970000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                        <color key="NSColor" red="0.14680000000000001" green="0.57081999999999999" blue="0.52502000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="14" name="Menlo-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="34.600000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                            <tabStops>
-                                                                <textTab alignment="left" location="34.599998474121094">
-                                                                    <options/>
-                                                                </textTab>
-                                                            </tabStops>
-                                                        </paragraphStyle>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                        </textView>
-                                    </subviews>
-                                </clipView>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="148" id="x0a-X9-qkU"/>
-                                </constraints>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="4fU-59-dxb">
-                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="3C9-ga-PfP">
-                                    <rect key="frame" x="447" y="0.0" width="15" height="148"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="0Y0-Y5-sF7" secondAttribute="trailing" constant="10" id="6vO-Hy-xXM"/>
                             <constraint firstItem="qro-Sd-jTj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="414" id="IZl-Up-W2S"/>
-                            <constraint firstItem="0Y0-Y5-sF7" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="K2X-pW-fEF"/>
-                            <constraint firstItem="0Y0-Y5-sF7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="NMI-Be-7IT"/>
                             <constraint firstAttribute="bottom" secondItem="qro-Sd-jTj" secondAttribute="bottom" constant="20" symbolic="YES" id="QbC-3r-8TN"/>
                             <constraint firstAttribute="trailing" secondItem="qro-Sd-jTj" secondAttribute="trailing" constant="20" symbolic="YES" id="YXn-im-SjF"/>
-                            <constraint firstItem="qro-Sd-jTj" firstAttribute="top" secondItem="0Y0-Y5-sF7" secondAttribute="bottom" constant="42" id="rmZ-xL-F5U"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="m_textView" destination="XE0-Ae-gON" id="eHV-rq-SQD"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
